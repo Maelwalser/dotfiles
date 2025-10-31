@@ -22,8 +22,6 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 
-export GEMINI_API_KEY=$(pass show gemini/api_key)
-
 eval "$(zoxide init zsh --cmd cd)"
 
 

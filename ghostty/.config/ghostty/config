@@ -19,14 +19,11 @@ gtk-toolbar-style = flat
 # Cursor styling
 cursor-style = "block"
 cursor-style-blink = true
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, ssh-env
 
 # Keyboard bindings
 keybind = shift+insert=paste_from_clipboard
 keybind = control+insert=copy_to_clipboard
 
-
 shell-integration = zsh
 
-# SSH session terminfo
-shell-integration-features = ssh-env
