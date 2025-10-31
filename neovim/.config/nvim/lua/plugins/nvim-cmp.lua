@@ -12,7 +12,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline", -- Add command line completion
+        "hrsh7th/cmp-cmdline",
     },
     config = function()
         local cmp = require("cmp")
@@ -41,7 +41,7 @@ return {
                 }),
             },
             mapping = cmp.mapping.preset.insert({
-                -- Navigation with Ctrl+j/k (your preference)
+                -- Navigation with Ctrl+j/k
                 ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
                 
@@ -138,8 +138,7 @@ return {
             matching = { disallow_symbol_nonprefix_matching = false }
         })
 
-        -- This is the correct place for this configuration.
-        -- It sets up floating windows for diagnostics globally.
+        -- Set up floating windows for diagnostics globally.
         vim.diagnostic.config({
             virtual_text = true,
             signs = true,

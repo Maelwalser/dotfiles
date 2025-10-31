@@ -1,4 +1,4 @@
-return   -- Vim fugitive (git operations)
+return
 {
 	"tpope/vim-fugitive",
 	cmd = { "Git", "Gwrite", "Gread", "Gdiffsplit", "Gvdiffsplit" },   -- Load on git commands

@@ -15,7 +15,6 @@ return {
             silent = true,
             desc = 'Refactor: Inline Variable'
         },
-        -- Example of how to add more refactorings that will also be lazy-loaded
         -- {
         --     '<leader>re',
         --     function()

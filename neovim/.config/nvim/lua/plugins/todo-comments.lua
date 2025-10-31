@@ -6,6 +6,7 @@ return {
     opts = {
       signs = true,      -- show icons in the signs column
       sign_priority = 8, -- sign priority
+      
       -- keywords recognized as todo comments
       keywords = {
         FIX = {
@@ -14,6 +15,7 @@ return {
         WARN = { alt = { "WARNING" } },
         PERF = { alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
       },
+
       highlight = {
         before = "",                     -- "fg" or "bg" or empty
         keyword = "wide",                -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)

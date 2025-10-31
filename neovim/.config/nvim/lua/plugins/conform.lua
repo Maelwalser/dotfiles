@@ -25,7 +25,7 @@ return {
 	config = function()
 		vim.g.autoformat = true
 
-		-- Load formatters on demand per filetype instead of all at once
+		-- Load formatters on demand per filetype
 		local formatters_by_ft = {
 			css = { { "prettierd", "prettier" } },
 			graphql = { { "prettierd", "prettier" } },
@@ -68,7 +68,8 @@ return {
 			}),
 			-- Set the log level. Use `:ConformInfo` to see the location of the log file
 			log_level = vim.log.levels.ERROR,
-			-- Conform will notify you when a formatter errors
+			
+			-- notify when a formatter errors
 			notify_on_error = true,
 		})
 	end,

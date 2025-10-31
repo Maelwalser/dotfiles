@@ -1,4 +1,3 @@
--- Debugging Support
 return {
   -- https://github.com/rcarriga/nvim-dap-ui
   'rcarriga/nvim-dap-ui',
@@ -117,8 +116,8 @@ return {
       -- Commented to prevent DAP UI from closing when unit tests finish
       -- require('dapui').close()
     end
-    -- Add dap configurations based on your language/adapter settings
-    -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+    
+    -- dap configurations based on language/adapter settings
     dap.configurations.java = {
       {
         name = "Debug Launch (2GB)",

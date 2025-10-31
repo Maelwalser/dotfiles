@@ -1,5 +1,4 @@
--- Add, Change, Delete Surrounding Chars (["''"])
-return -- Surroundings (brackets, quotes, XML tags)
+return 
 {
   'kylechui/nvim-surround',
   version = "*",

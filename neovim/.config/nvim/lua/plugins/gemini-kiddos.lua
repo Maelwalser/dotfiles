@@ -2,11 +2,11 @@ return {
   "kiddos/gemini.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim", -- Often a dependency for UI elements
+    "MunifTanjim/nui.nvim",
   },
   opts = {
     api_key = vim.env.GEMINI_API_KEY,
-    model = "gemini-2.5-pro", -- Specify your desired model
+    model = "gemini-2.5-pro", -- desired model
     chat = {
       enabled = true, -- This enables the chat module
     },
@@ -124,7 +124,6 @@ return {
     require("gemini").setup(opts)
 
     -- Use GeminiChat for the chat interface.
-    -- This command should open the chat window provided by the plugin.
     vim.keymap.set("n", "<leader>jc", function()
       local prompt = vim.fn.input("Gemini Chat: ")
       -- Proceed only if the user provides some input

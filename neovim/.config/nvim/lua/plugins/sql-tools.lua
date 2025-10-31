@@ -1,4 +1,3 @@
--- Add a new file: lua/plugins/sql-tools.lua
 return {
   "nanotee/sqls.nvim",
   ft = { "sql", "pgsql" }, -- Load only for SQL files

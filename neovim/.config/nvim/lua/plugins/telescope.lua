@@ -40,7 +40,7 @@ return {
 								local new_dir = vim.fn.fnamemodify(selection.value, ":p")
 
 
-								-- 2. Explicitly tell oil.nvim to open the new directory
+								-- tell oil.nvim to open the new directory
 								if oil_ok then
 									oil.open(new_dir)
 								end

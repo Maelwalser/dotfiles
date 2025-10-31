@@ -1,5 +1,4 @@
 return {
-  "vim-test/vim-test",
+  "vim-test/vim-test", --Test runner
   lazy = true
 }
---Test runner

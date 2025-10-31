@@ -8,7 +8,7 @@ return {
       dismiss_suggestion = "<Esc>",
     },
     api_key = vim.env.GEMINI_API_KEY,
-    model = "gemini-2.0-flash", -- Gemini model
+    model = "gemini-2.0-flash", -- AI model
     completion = {
       enable = true,          -- Enable completion
       frontend = "virtual_text",

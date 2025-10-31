@@ -5,8 +5,6 @@ return {
   config = function()
     require("oil").setup({
       keymaps = {
-        -- Remove the custom <CR> keymap from here - it was applying to ALL oil windows
-        -- ["<CR>"] = { ... }, -- REMOVED
         ["<C-s>"] = "actions.select_vsplit",
         ["<C-v>"] = "actions.select_split",
         ["<C-t>"] = "actions.select_tab",
@@ -15,6 +13,7 @@ return {
         ["<C-h>"] = "<C-w>h",
         ["<C-l>"] = "<C-w>l",
         ["q"] = "actions.close",
+        
         
         -- copying folder content
         ["<leader>cf"] = function()

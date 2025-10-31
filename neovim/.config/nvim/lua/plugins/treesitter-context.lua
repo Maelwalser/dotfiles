@@ -1,4 +1,3 @@
--- Context display for treesitter
 return
 {
   "nvim-treesitter/nvim-treesitter-context",
