@@ -9,9 +9,13 @@ return {
         ["<C-v>"] = "actions.select_split",
         ["<C-t>"] = "actions.select_tab",
         ["<C-p>"] = "actions.preview",
+        
         -- Preserve your window navigation keys
-        ["<C-h>"] = "<C-w>h",
-        ["<C-l>"] = "<C-w>l",
+        ["<C-h>"] = false,
+        ["<C-j>"] = false,
+        ["<C-k>"] = false,
+        ["<C-l>"] = false,
+
         ["q"] = "actions.close",
         
         

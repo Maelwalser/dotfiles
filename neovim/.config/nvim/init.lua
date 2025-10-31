@@ -167,11 +167,6 @@ vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "save and quit" })
 vim.keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without save" })
 vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "save" })
 
---SPLIT WINDOW NAVIGATION
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- TAB MANAGEMENT
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open a new tab
@@ -204,9 +199,6 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right in visual mode" })
 
 -- OIL
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
--- VIM-MAXIMIZER
-vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 vim.keymap.set("n", "<leader>fm", function()
 	require("telescope.builtin").treesitter({ symbols = { "function", "method" } })
