@@ -5,66 +5,21 @@
 }
 
 
-
-path{
+path {
   color: white;
-}
-.button-toolbar button:hover {
-
-}
-.button-icon override:hover{
-
-}
-
-.panelbtn:hover {
-
 }
 
 .button-toolbar button,
 .panelbtn {
- transition:none;
+  transition: none;
 }
 
 
 /*Hide the Bookmark and Notes Previews*/
-.addbookmark-cardwrapper hupper-half .preview,
+.addbookmark-cardwrapper .preview,
 .notes-cardwrapper .upper-half .preview {
   display: none;
 }
-
-
-
-
-
-
-
-#titlebar {}
-
-/* Parent of following classes*/
-.tabless {}
-
-
-
-
-/*Menu button top left*/
-.vivaldi {}
-
-/* icon of menu */
-.burger-icon {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -76,35 +31,9 @@ path{
 }
 
 
-.tab-position {}
-
-.tab {}
-
-/* div where the tabs are */
-.tab-strip {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Whole section of urlBar */
 .mainbar {
-  border-top:solid #22151c;
+  border-top: solid #22151c;
   backdrop-filter: blur(40px);
   background-color: transparent;
   order: 100;
@@ -112,18 +41,8 @@ path{
 
 .toolbar-mainbar {
   justify-content: center;
-  align-content:center;
+  align-items: center;
 }
-
-.button-toolbar {
-
-
-}
-
-.toolbar {
-
-}
-
 
 /* whole input field area*/
 .UrlBar-AddressField {
@@ -132,44 +51,29 @@ path{
 
 }
 
-/*Whole Input field section*/
-.UrlBar-UrlFieldWrapper {
-
-}
-
-
 /*Only input field area */
 .UrlField {
   justify-content: center;
-  align-content: center;
+  align-items: center;
   font-size: 1rem;
   align-self: center;
 }
+
 /* Input field itself */
 #urlFieldInput {
   text-align: center;
-  align-content: center;
   font-weight: 400;
   font-size: 1.3em;
-  justify-content: center;
 }
-
-/* the whole suggestion box */
-.OmniDropdown {
-  opacity: 0.8;
-}
-
 
 
 /*one whole section of suggestions f.e. Search google or history label on top*/
 .OmniDropdown-Collection {
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width:100%;
+  width: 100%;
 }
-
 
 
 /*One whole row*/
@@ -177,58 +81,41 @@ path{
   display: flex;
   width: inherit;
   justify-content: center;
-  align-content: center;
-}
-
-
-
-button.ToolbarButton-Button {
+  align-items: center;
 }
 
 /* label of collection, f.e. suggestion or search google */
 .OmniDropdown-Label {
-  display:none;
+  display: none;
 }
 
-
-
-/* TExt displayed per row*/
-.OmniLinkItemDeprecated-DisplayText {  
+/* Text displayed per row*/
+.OmniLinkItemDeprecated-DisplayText {
   opacity: revert !important;
   justify-content: center;
-  align-content: center;
+  text-align: center;
 }
 
-
-.button-addressfield.SiteInfoButton.internal {
-
-}
-.omni-clickable.OmniLinkItemDeprecated{
-}
-.omni-clickable.OmniLinkItemDeprecated.OmniLinkItemDeprecated-NoDelete.OmniLinkItemDeprecated--DisplayTextOnly-NoDelete{
+.omni-clickable.OmniLinkItemDeprecated.OmniLinkItemDeprecated-NoDelete.OmniLinkItemDeprecated--DisplayTextOnly-NoDelete {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
+
 /*Icon on a row*/
 .OmniLinkItemDeprecated-Favicon {
   align-self: center;
-  position:  absolute;
-  left: 0.5rem;
 }
-.OmniLinkItemDeprecated-DisplayText{
-    color: #FAFAF5;
-}
-.button-toolbar{
+
+.OmniLinkItemDeprecated-DisplayText {
+  color: #FAFAF5;
 }
 
 /*URL on a row*/
 .OmniLinkItemDeprecated-DisplayUrl {
   display: none;
 }
-.button-addressfield.SiteInfoButton.internal {
-} 
 
 /*Window close, minimize and fullscreen buttons*/
 .window-buttongroup {
@@ -241,7 +128,6 @@ button.ToolbarButton-Button {
 
 }
 
-
 /*maximized*/
 .window-maximize {
   opacity: 0.7;
@@ -253,10 +139,9 @@ button.ToolbarButton-Button {
 }
 
 
-
 /*
 ================================================================================
-  PRODUCTIVITY MODS: AUTO-HIDE BOTTOM ADDRESS BAR 
+AUTO-HIDE BOTTOM ADDRESS BAR 
 ================================================================================
 */
 
@@ -290,7 +175,10 @@ button.ToolbarButton-Button {
 /* This forcefully centers the entire dropdown suggestion box itself, not just its content */
 .OmniDropdown {
   left: 50% !important;
+  opacity: 0.8;
   transform: translateX(-50%) !important;
-  width: 50vw !important; /* Sets the dropdown width to 50% of the viewport width */
-  max-width: 700px; /* Prevents the dropdown from becoming excessively wide on large monitors */
+  width: 50vw !important;
+  /* Sets the dropdown width to 50% of the viewport width */
+  max-width: 900px;
+  /* Prevents the dropdown from becoming excessively wide on large monitors */
 }
