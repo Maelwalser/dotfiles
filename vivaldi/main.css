@@ -1,0 +1,296 @@
+.startpage-navigation {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: white !important;
+}
+
+
+
+path{
+  color: white;
+}
+.button-toolbar button:hover {
+
+}
+.button-icon override:hover{
+
+}
+
+.panelbtn:hover {
+
+}
+
+.button-toolbar button,
+.panelbtn {
+ transition:none;
+}
+
+
+/*Hide the Bookmark and Notes Previews*/
+.addbookmark-cardwrapper hupper-half .preview,
+.notes-cardwrapper .upper-half .preview {
+  display: none;
+}
+
+
+
+
+
+
+
+#titlebar {}
+
+/* Parent of following classes*/
+.tabless {}
+
+
+
+
+/*Menu button top left*/
+.vivaldi {}
+
+/* icon of menu */
+.burger-icon {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Whole tabs section */
+#footer {
+  order: -1;
+  box-sizing: revert;
+  height: 1.95rem;
+}
+
+
+.tab-position {}
+
+.tab {}
+
+/* div where the tabs are */
+.tab-strip {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Whole section of urlBar */
+.mainbar {
+  border-top:solid #22151c;
+  backdrop-filter: blur(40px);
+  background-color: transparent;
+  order: 100;
+}
+
+.toolbar-mainbar {
+  justify-content: center;
+  align-content:center;
+}
+
+.button-toolbar {
+
+
+}
+
+.toolbar {
+
+}
+
+
+/* whole input field area*/
+.UrlBar-AddressField {
+  height: 1.85rem;
+  backdrop-filter: blur(10px);
+
+}
+
+/*Whole Input field section*/
+.UrlBar-UrlFieldWrapper {
+
+}
+
+
+/*Only input field area */
+.UrlField {
+  justify-content: center;
+  align-content: center;
+  font-size: 1rem;
+  align-self: center;
+}
+/* Input field itself */
+#urlFieldInput {
+  text-align: center;
+  align-content: center;
+  font-weight: 400;
+  font-size: 1.3em;
+  justify-content: center;
+}
+
+/* the whole suggestion box */
+.OmniDropdown {
+  opacity: 0.8;
+}
+
+
+
+/*one whole section of suggestions f.e. Search google or history label on top*/
+.OmniDropdown-Collection {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+
+
+/*One whole row*/
+.omni-clickable {
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+button.ToolbarButton-Button {
+}
+
+/* label of collection, f.e. suggestion or search google */
+.OmniDropdown-Label {
+  display:none;
+}
+
+
+
+/* TExt displayed per row*/
+.OmniLinkItemDeprecated-DisplayText {  
+  opacity: revert !important;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.button-addressfield.SiteInfoButton.internal {
+
+}
+.omni-clickable.OmniLinkItemDeprecated{
+}
+.omni-clickable.OmniLinkItemDeprecated.OmniLinkItemDeprecated-NoDelete.OmniLinkItemDeprecated--DisplayTextOnly-NoDelete{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-content: center;
+}
+/*Icon on a row*/
+.OmniLinkItemDeprecated-Favicon {
+  align-self: center;
+  position:  absolute;
+  left: 0.5rem;
+}
+.OmniLinkItemDeprecated-DisplayText{
+    color: #FAFAF5;
+}
+.button-toolbar{
+}
+
+/*URL on a row*/
+.OmniLinkItemDeprecated-DisplayUrl {
+  display: none;
+}
+.button-addressfield.SiteInfoButton.internal {
+} 
+
+/*Window close, minimize and fullscreen buttons*/
+.window-buttongroup {
+  opacity: 0.25;
+}
+
+/*minimized*/
+.window-minimize {
+  opacity: 0.7;
+
+}
+
+
+/*maximized*/
+.window-maximize {
+  opacity: 0.7;
+}
+
+/*close*/
+.window-close {
+  opacity: 0.7;
+}
+
+
+
+/*
+================================================================================
+  PRODUCTIVITY MODS: AUTO-HIDE BOTTOM ADDRESS BAR 
+================================================================================
+*/
+
+/* Hide the main address bar by default and reserve its space */
+.mainbar {
+  /* Move the bar just below the visible area */
+  transform: translateY(100%);
+  /* Ensure a smooth slide-in/out animation */
+  transition: transform 0.2s ease-in-out !important;
+  /* Reclaim the space of the hidden bar to prevent an empty gap.
+     NOTE: Adjust '-34px' to the exact height of your address bar. */
+  margin-top: -34px;
+}
+
+/*
+  Show the mainbar under two specific conditions:
+  1. An element *inside* the mainbar gets focus (like the address field).
+  2. The mouse cursor hovers over the bar's hidden location at the bottom.
+*/
+.mainbar:focus-within,
+.mainbar:hover {
+  transform: translateY(0);
+}
+
+/*
+================================================================================
+  IMPROVED CENTERING FOR SEARCH SUGGESTIONS
+================================================================================
+*/
+
+/* This forcefully centers the entire dropdown suggestion box itself, not just its content */
+.OmniDropdown {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 50vw !important; /* Sets the dropdown width to 50% of the viewport width */
+  max-width: 700px; /* Prevents the dropdown from becoming excessively wide on large monitors */
+}
