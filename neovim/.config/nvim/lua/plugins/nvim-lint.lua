@@ -14,7 +14,6 @@ return {
       typescriptreact = { "eslint_d" },
       json = { 'jsonlint' },
       http = { 'kulala-fmt' },
-      groovy = { 'npm-groovy-lint' },
       python = { "ruff" },
       go = { "golangcilint" },
       yaml = { "yamllint" },
