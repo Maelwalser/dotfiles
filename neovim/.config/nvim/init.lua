@@ -104,9 +104,9 @@ vim.opt.conceallevel = 2                        -- Hide concealed text (e.g. mar
 -- -----------------------------------------------------------------------------
 vim.diagnostic.config({
 	float = { border = "rounded" }, -- Add border to diagnostic popups
-    underline = {
-        severity = vim.diagnostic.severity.WARN,
-    },
+	underline = {
+		severity = vim.diagnostic.severity.WARN,
+	},
 })
 
 -- -----------------------------------------------------------------------------
@@ -155,9 +155,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- CLEAR SEARCH HIGHLIGHTS
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search highlights" })
 
--- EXIT TERMINAL MODE
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
---
+
 -- GITLEAKS
 vim.keymap.set("n", "<leader>gS", function()
 	vim.cmd("split | term gitleaks detect -v --source .")
@@ -188,11 +186,11 @@ vim.keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
 -- SPLIT WINDOW
 vim.keymap.set("n", "<leader>wv", ":vsplit<cr>", { desc = "[W]indow Split [V]ertical" })
 vim.keymap.set("n", "<leader>wh", ":split<cr>", { desc = "[W]indow Split [H]orizontal" })
-vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "[W]indow Split Equal WIdth" })
+vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "[W]indow Split Equal Width" })
 vim.keymap.set("n", "<leader>wx", ":close<CR>", { desc = "Close split [W]indow" })
 vim.keymap.set("n", "<leader>wj", "<C-w>-", { desc = "make split [W]indow height shorter" }) -- make split window height shorter
 vim.keymap.set("n", "<leader>wk", "<C-w>+", { desc = "make split [W]indow height taller" })  -- make split windows height taller
-vim.keymap.set("n", "<leader>wl", "<C-w>>5", { desc = "make split [W]indow width bigger" }) -- make split windows width bigger
+vim.keymap.set("n", "<leader>wl", "<C-w>>5", { desc = "make split [W]indow width bigger" })  -- make split windows width bigger
 -- STAY IN INDENT MODE
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left in visual mode" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right in visual mode" })
@@ -252,7 +250,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 -- Explorer
 vim.keymap.set("n", "<leader>e", function()
-  _G.toggle_oil_sidebar()
+	_G.toggle_oil_sidebar()
 end, { desc = "Toggle file explorer sidebar" })
 
 -- Auto-resize splits when Neovim window is resized
@@ -271,7 +269,8 @@ vim.api.nvim_create_autocmd("RecordingEnter", {
 	group = macro_recording_group,
 	pattern = "*",
 	callback = function()
-		vim.fn.sign_place(1, "MacroRecording", "MacroRecording", vim.api.nvim_get_current_buf(), { lnum = vim.fn.line("."), priority = 100 })
+		vim.fn.sign_place(1, "MacroRecording", "MacroRecording", vim.api.nvim_get_current_buf(),
+			{ lnum = vim.fn.line("."), priority = 100 })
 	end,
 })
 
@@ -282,5 +281,3 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 		vim.fn.sign_unplace("MacroRecording")
 	end,
 })
-
-

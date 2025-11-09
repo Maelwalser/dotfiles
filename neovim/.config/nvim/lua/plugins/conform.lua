@@ -45,6 +45,7 @@ return {
 			toml = { "taplo" },
 			yaml = { "prettier" },
 			go = { "goimports", "gofmt" },
+			rust = { "goimports", "gofmt" },
 			["_"] = { "trim_whitespace" },
 		}
 

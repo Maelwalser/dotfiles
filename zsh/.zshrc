@@ -2,7 +2,7 @@ ZSH_THEME="my-darkblood"
 
 # ALIAS
 alias vim='nvim'
-
+alias lg='lazygit'
 
 # Plugins
 plugins=(
