@@ -1,32 +1,64 @@
 -- Get the jdtls module
 local status_ok, jdtls = pcall(require, "jdtls")
 if not status_ok then
-  vim.notify("nvim-jdtls not found", vim.log.levels.ERROR)
-  return
+    vim.notify("nvim-jdtls not found", vim.log.levels.ERROR)
+    return
 end
 
 -- Define paths (Linux-specific)
 local home = os.getenv('HOME')
 if not home then
-  vim.notify("HOME environment variable not set.", vim.log.levels.ERROR)
-  return
+    vim.notify("HOME environment variable not set.", vim.log.levels.ERROR)
+    return
 end
 
 local mason_path = vim.fn.stdpath('data') .. '/mason'
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local cmp_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if cmp_lsp_status_ok then
+    capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+end
+
+-- Function to find root directory
+local function get_root_dir()
+    local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle', 'build.gradle.kts' }
+    local root_dir = jdtls.setup.find_root(root_markers)
+
+    if not root_dir then
+        vim.notify("Could not find Java project root. Using current directory.", vim.log.levels.WARN)
+        root_dir = vim.fn.getcwd()
+    end
+
+    return root_dir
+end
+
+local root_dir = get_root_dir()
+
 -- All the paths we need for jdtls
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local project_name = vim.fn.fnamemodify(root_dir, ':p:h:t')
 local workspace_dir = home .. '/.cache/jdtls-workspace/' .. project_name
 local jdtls_path = mason_path .. '/packages/jdtls'
 
-local java_debug_path = mason_path .. '/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+local java_debug_path = mason_path ..
+    '/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
 local java_test_path = mason_path .. '/packages/java-test/extension/server'
 
--- Bundles for debugging and testing
-local bundles = {
-    java_debug_path,
-    vim.fn.glob(java_test_path .. '/*.jar', 1)
-}
+local bundles = {}
+
+-- Add java-debug-adapter jar if it exists
+local debug_jar = vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar', true)
+if debug_jar ~= '' then
+    table.insert(bundles, debug_jar)
+end
+
+-- Add java-test jars if they exist
+local test_jars = vim.split(vim.fn.glob(java_test_path .. '/extension/server/*.jar', true), '\n')
+for _, jar in ipairs(test_jars) do
+    if jar ~= '' then
+        table.insert(bundles, jar)
+    end
+end
 
 -- jdtls configuration
 local config = {
@@ -46,9 +78,25 @@ local config = {
         '-data',
         workspace_dir
     },
-    root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'}),
+    root_dir = root_dir,
+    capabilities = capabilities,
     settings = {
         java = {
+            eclipse = {
+                downloadSources = true,
+            },
+            maven = {
+                downloadSources = true,
+            },
+            implementationsCodeLens = {
+                enabled = true,
+            },
+            referencesCodeLens = {
+                enabled = true,
+            },
+            references = {
+                includeDecompiledSources = true,
+            },
             signatureHelp = { enabled = true },
             contentProvider = { preferred = 'fernflower' },
             completion = {
@@ -78,6 +126,9 @@ local config = {
                 support = true,
             },
         }
+    },
+    flags = {
+        allow_incremental_sync = true,
     },
     init_options = {
         bundles = bundles,
