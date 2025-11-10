@@ -110,10 +110,11 @@ return {
 				"jsonls",
 				"ruff",
 				"ts_ls",
+				"vtsls",
 			},
 			auto_installation = true,
 			handlers = {
-				["ts_ls"] = function()
+				["vtsls"] = function()
 					lspconfig.vtsls.setup({
 						capabilities = capabilities,
 						on_attach = common_on_attach,
