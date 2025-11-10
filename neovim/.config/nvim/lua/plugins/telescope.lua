@@ -63,7 +63,7 @@ return {
 			vim.keymap.set("n", "<leader>fd", function()
 				builtin.diagnostics({ bufnr = 0, previewer = false, severity = vim.diagnostic.severity.ERROR })
 			end, { desc = "(F)ind (E)rror Diagnostics in buffer" })
-			vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "(F)ind (R)esume" })
+			-- vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "(F)ind (R)esume" })
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind Existing [B]uffers" })
 			vim.keymap.set("n", "<leader>cd", find_and_change_directory, { desc = "[C]hange [D]irectory" })
