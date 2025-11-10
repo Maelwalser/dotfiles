@@ -12,7 +12,7 @@ return {
         local configs = require("nvim-treesitter.configs")
         configs.setup({
 
-            ensure_installed = { "lua", "vim", "vimdoc", "java", "javascript", "typescript", "json", "html", "css", "markdown", "dockerfile", "git_rebase", "gitattributes", "gitcommit", "gitignore", "json5", "jsonc", "markdown_inline", "python", "regex", "tsx", "sql", "yaml", "vue", "go", "gomod", "gosum", "gowork" },
+            ensure_installed = { "lua", "vim", "vimdoc", "java", "javascript", "typescript", "json", "html", "css", "markdown", "dockerfile", "git_rebase", "gitattributes", "gitcommit", "gitignore", "json5", "jsonc", "markdown_inline", "python", "regex", "tsx", "sql", "yaml", "vue", "go", "gomod", "gosum", "gowork", "c" },
 
             sync_install = true,
 

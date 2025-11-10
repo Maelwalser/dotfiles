@@ -22,7 +22,7 @@ end
 
 -- Function to find root directory
 local function get_root_dir()
-    local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle', 'build.gradle.kts' }
+    local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle', 'build.gradle.kts','settings.gradle' }
     local root_dir = jdtls.setup.find_root(root_markers)
 
     if not root_dir then

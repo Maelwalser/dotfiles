@@ -44,21 +44,21 @@ return {
                 -- Navigation with Ctrl+j/k
                 ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                
+
                 -- Alternative navigation with Ctrl+n/p (keep as backup)
                 ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
                 ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-                
+
                 -- Scroll documentation window
                 ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                
+
                 -- Trigger completion manually
                 ["<C-Space>"] = cmp.mapping.complete(),
-                
+
                 -- Abort completion
                 ["<C-e>"] = cmp.mapping.abort(),
-                
+
                 -- Confirm selection
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
@@ -82,9 +82,9 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp", priority = 1000 },
-                { name = "luasnip", priority = 750 },
-                { name = "buffer", priority = 500 },
-                { name = "path", priority = 250 },
+                { name = "luasnip",  priority = 750 },
+                { name = "buffer",   priority = 500 },
+                { name = "path",     priority = 250 },
             }),
             window = {
                 completion = cmp.config.window.bordered({
@@ -140,18 +140,14 @@ return {
 
         -- Set up floating windows for diagnostics globally.
         vim.diagnostic.config({
-            virtual_text = true,
             signs = true,
-            update_in_insert = true,
+            update_in_insert = false,
             underline = true,
             severity_sort = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
+            virtual_text = {
+                spacing = 4,
+                source = "if_many",
+                prefix = "●",
             },
         })
     end,
