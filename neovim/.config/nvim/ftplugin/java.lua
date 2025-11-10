@@ -5,22 +5,22 @@ if not status_ok then
   return
 end
 
--- Define paths
-local home = os.getenv('USERPROFILE')
-local mason_path = vim.fn.stdpath('data') .. '/mason'
-
--- Helper function to format paths for Windows
-local function format_path(path)
-    return vim.fn.substitute(path, '/', '\\', 'g')
+-- Define paths (Linux-specific)
+local home = os.getenv('HOME')
+if not home then
+  vim.notify("HOME environment variable not set.", vim.log.levels.ERROR)
+  return
 end
+
+local mason_path = vim.fn.stdpath('data') .. '/mason'
 
 -- All the paths we need for jdtls
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = format_path(home .. '/.cache/jdtls-workspace/' .. project_name)
-local jdtls_path = format_path(mason_path .. '/packages/jdtls')
+local workspace_dir = home .. '/.cache/jdtls-workspace/' .. project_name
+local jdtls_path = mason_path .. '/packages/jdtls'
 
-local java_debug_path = format_path(mason_path .. '/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar')
-local java_test_path = format_path(mason_path .. '/packages/java-test/extension/server')
+local java_debug_path = mason_path .. '/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'
+local java_test_path = mason_path .. '/packages/java-test/extension/server'
 
 -- Bundles for debugging and testing
 local bundles = {
@@ -38,11 +38,11 @@ local config = {
         '-Dlog.protocol=true',
         '-Dlog.level=WARN',
         '-Xmx1g',
-        '-javaagent:' .. jdtls_path .. '\\lombok.jar',
+        '-javaagent:' .. jdtls_path .. '/lombok.jar',
         '-jar',
-        vim.fn.glob(jdtls_path .. '\\plugins\\org.eclipse.equinox.launcher_*.jar'),
+        vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
         '-configuration',
-        jdtls_path .. '\\config_win',
+        jdtls_path .. '/config_linux',
         '-data',
         workspace_dir
     },

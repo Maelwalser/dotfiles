@@ -10,7 +10,6 @@ vim.opt.guicursor =
 vim.o.background = "dark"                         -- Set background to dark
 vim.opt.guifont = "JetBrainsMonoNL Nerd Font:h10" -- Set editor font
 
-
 -- Line numbers and wrapping
 vim.wo.wrap = false          -- Disable line wrapping
 vim.wo.number = true         -- Show line numbers
