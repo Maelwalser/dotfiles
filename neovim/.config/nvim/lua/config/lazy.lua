@@ -26,7 +26,7 @@ require("lazy").setup("plugins", {
 	-- automatically check for plugin updates
 	checker = {
 		enabled = true,
-		concurrency = 12, -- Set maximum number of concurrent tasks
+		concurrency = 15, -- Set maximum number of concurrent tasks
 		notify = true,   -- Don't notify about updates unless asked
 		frequency = 43200, -- Check for updates twice  a day (in seconds)
 	},

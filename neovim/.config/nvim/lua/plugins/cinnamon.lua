@@ -4,11 +4,11 @@ return {
     opts = {
         keymaps = {
             basic = true,
-            extra = false, -- Disable extra keymaps for better performance
+            extra = false,
         },
     -- Window-only mode is fastest
     options = {
-      mode = "window", 
+      mode = "window",
         }
     },
     config = function(_, opts)
@@ -21,7 +21,6 @@ return {
             -- Default: { "alpha", "beta", "diff", "dropbar", "fugitive", "gitcommit", "help", "hgcommit", "log", "markdown", "NvimTree", "Outline", "quickfix", "git", "neo-tree" }
             -- excluded_filetypes = { "neo-tree", "NvimTree", "Trouble", "lazy", "mason", "help", "alpha", "dashboard" },
             -- Maximum width of the scrollbar.
-            max_width = 1,
             use_window_highlight = false,
             
             -- Highlight group for the scrollbar.

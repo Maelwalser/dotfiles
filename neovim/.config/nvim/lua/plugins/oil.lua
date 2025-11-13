@@ -17,49 +17,6 @@ return {
         ["<C-l>"] = false,
 
         ["q"] = "actions.close",
-        
-        
-        -- copying folder content
-        ["<leader>cf"] = function()
-          local oil = require("oil")
-          local entry = oil.get_cursor_entry()
-
-          if not entry or entry.type ~= "directory" then
-            vim.notify("Not a directory", vim.log.levels.WARN)
-            return
-          end
-
-          local dir_path = oil.get_current_dir() .. entry.name
-          local all_content = ""
-          local file_count = 0
-
-          local function traverse(path)
-            local items = vim.fn.readdir(path)
-            for _, item in ipairs(items) do
-              if item ~= "." and item ~= ".." then
-                local item_path = path .. "/" .. item
-                if vim.fn.isdirectory(item_path) == 1 then
-                  traverse(item_path)
-                else
-                  if vim.fn.filereadable(item_path) == 1 then
-                    local content = vim.fn.readfile(item_path)
-                    all_content = all_content .. "-- " .. item_path .. "\n\n" .. table.concat(content, "\n") .. "\n\n"
-                    file_count = file_count + 1
-                  end
-                end
-              end
-            end
-          end
-
-          traverse(dir_path)
-
-          if all_content ~= "" then
-            vim.fn.setreg('+', all_content)
-            vim.notify("Copied content of " .. file_count .. " files to clipboard", vim.log.levels.INFO)
-          else
-            vim.notify("No files found in directory", vim.log.levels.WARN)
-          end
-        end,
       },
       default_file_explorer = true,
       columns = {

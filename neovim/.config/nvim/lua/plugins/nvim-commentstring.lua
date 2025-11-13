@@ -1,1 +1,4 @@
-return { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" }
+return {
+  "JoosepAlviste/nvim-ts-context-commentstring",
+  event = "VeryLazy",
+}

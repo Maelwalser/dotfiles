@@ -106,7 +106,6 @@ return {
 				"sqlls",
 				"tailwindcss",
 				"yamlls",
-				"templ",
 				"jsonls",
 				"ruff",
 				"ts_ls",

@@ -2,7 +2,8 @@ ZSH_THEME="my-darkblood"
 
 # ALIAS
 alias vim='nvim'
-
+alias lg='lazygit'
+alias killall='ka'
 
 # Plugins
 plugins=(
@@ -115,7 +116,6 @@ bindkey -r -M viins '^F' # self-insert
 bindkey -r -M viins '^G' # list-expand
 bindkey -r -M viins '^H' # backward-delete-char (we rely on ^?)
 bindkey -r -M viins '^K' # self-insert
-bindkey -r -M viins '^L' # clear-screen
 bindkey -r -M viins '^N' # down-history
 bindkey -r -M viins '^O' # self-insert
 bindkey -r -M viins '^P' # up-history

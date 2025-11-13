@@ -7,7 +7,7 @@ return {
   -- https://github.com/SmiteshP/nvim-navic
     "SmiteshP/nvim-navic",
   -- https://github.com/nvim-tree/nvim-web-devicons
-    "nvim-tree/nvim-web-devicons", 
+    "nvim-tree/nvim-web-devicons",
   },
   opts = {
   },
