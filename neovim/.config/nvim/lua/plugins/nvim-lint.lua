@@ -3,7 +3,6 @@ return {
 
   config = function()
     require('lint').linters_by_ft = {
-      markdown = { 'markdownlint' },
       java = { 'checkstyle' },
       javascript = { 'eslint_d' },
       typescript = { 'eslint_d' },
