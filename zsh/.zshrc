@@ -3,7 +3,9 @@ ZSH_THEME="my-darkblood"
 # ALIAS
 alias vim='nvim'
 alias lg='lazygit'
-alias killall='ka'
+alias ld='lazydocker'
+alias ka='killall'
+
 
 # Plugins
 plugins=(
