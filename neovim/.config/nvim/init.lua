@@ -166,6 +166,13 @@ vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "save and quit" })
 vim.keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without save" })
 vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "save" })
 
+-- Moving through paragraphs
+vim.keymap.set("n", "<Leader>j", "}", { desc = "Move to next paragraph" })
+vim.keymap.set("n", "<Leader>k", "{", { desc = "Move to previous paragraph" })
+
+-- Moving through paragraphs
+vim.keymap.set("n", "<Leader>h", "0", { desc = "Move to end of line" })
+vim.keymap.set("n", "<Leader>l", "$", { desc = "Move to beginning of line" })
 
 -- TAB MANAGEMENT
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")   -- open a new tab
@@ -249,10 +256,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = { "*.md", "*.txt" },
 	command = "setlocal spell",
 })
--- Explorer
-vim.keymap.set("n", "<leader>e", function()
-  _G.toggle_oil_sidebar()
-end, { desc = "Toggle file explorer sidebar" })
 
 -- Auto-resize splits when Neovim window is resized
 vim.api.nvim_create_autocmd("VimResized", {
