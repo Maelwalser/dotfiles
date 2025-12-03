@@ -147,3 +147,4 @@ bindkey -r -M viins '^X~'
 
 
 
+export PATH="$HOME/.local/bin:$PATH"

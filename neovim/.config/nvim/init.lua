@@ -8,7 +8,7 @@ vim.opt.syntax = "on"        -- Enable syntax highlighting
 vim.opt.guicursor =
 "n-v-c:block-blinkon0,i:block-blinkwait700-blinkoff400-blinkon250-Cursor,ci-ve:ver25-blinkon0,r-cr:hor20-blinkon0,o:hor50-blinkon0,sm:block-blinkwait175-blinkoff150-blinkon175"
 vim.o.background = "dark"                         -- Set background to dark
-vim.opt.guifont = "JetBrainsMonoNL Nerd Font:h10" -- Set editor font
+vim.opt.guifont = "JetBrainsMonoNL Nerd Font:h12" -- Set editor font
 
 -- Line numbers and wrapping
 vim.wo.wrap = false          -- Disable line wrapping
@@ -153,6 +153,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- CLEAR SEARCH HIGHLIGHTS
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search highlights" })
+--
+-- SEARCH RESULT NAVIGATION (Alt + n for next, Alt + p for previous)
+vim.keymap.set("n", "<C-n>", "n", { desc = "Next search result" })
+vim.keymap.set("n", "<C-p>", "N", { desc = "Previous search result" })
 
 -- EXIT TERMINAL MODE
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
@@ -189,7 +193,7 @@ vim.keymap.set("n", "<leader>ql", ":clast<CR>")  -- jump to last quickfix list i
 vim.keymap.set("n", "<leader>qx", ":cclose<CR>") -- close quickfix list
 
 -- VIM REST CONSOLE
-vim.keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
+-- vim.keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
 
 -- SPLIT WINDOW
 vim.keymap.set("n", "<leader>wv", ":vsplit<cr>", { desc = "[W]indow Split [V]ertical" })
