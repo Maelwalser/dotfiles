@@ -135,6 +135,55 @@ return {
 					})
 				end,
 				["jdtls"] = function() end,
+
+				["gopls"] = function()
+					lspconfig.gopls.setup({
+						capabilities = capabilities,
+						on_attach = common_on_attach,
+						filetypes = { "go", "gomod", "gowork", "gotmpl" },
+						root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+						settings = {
+							gopls = {
+								gofumpt = true,
+								codelenses = {
+									gc_details = false,
+									generate = true,
+									regenerate_cgo = true,
+									run_govulncheck = true,
+									test = true,
+									tidy = true,
+									upgrade_dependency = true,
+									vendor = true,
+								},
+								hints = {
+									assignVariableTypes = true,
+									compositeLiteralFields = true,
+									compositeLiteralTypes = true,
+									constantValues = true,
+									functionTypeParameters = true,
+									parameterNames = true,
+									rangeVariableTypes = true,
+								},
+								analyses = {
+									unusedparams = true,
+									nilness = true,
+									unusedwrite = true,
+								},
+
+								diagnostics = {
+									completeUnimported = true,
+									usePlaceholders = true,
+									staticcheck = true,
+									analyses = {
+										unusedparams = true,
+									}
+								},
+							},
+						},
+
+					})
+				end,
+
 				function(server_name)
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
@@ -160,8 +209,12 @@ return {
 			ensure_installed = {
 				"java-debug-adapter",
 				"java-test",
+				"go-debug-adapter",
 				"eslint_d",
 				"jsonlint",
+				"goimports", -- Auto-importer/Formatter
+				"gomodifytags", -- Tool to modify struct tags
+				"impl",
 				"yamllint",
 				"yamlfix",
 				"jq",

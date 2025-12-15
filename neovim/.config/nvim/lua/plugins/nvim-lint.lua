@@ -17,7 +17,6 @@ return {
       go = { "golangcilint" },
       yaml = { "yamllint" },
       dockerfile = { "hadolint" },
-      sql = { "sqlfluff" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {

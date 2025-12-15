@@ -34,9 +34,6 @@ return {
 			javascriptreact = { { "prettierd", "prettier" } },
 			typescript = { { "prettierd", "prettier" } },
 			typescriptreact = { { "prettierd", "prettier" } },
-			json = { { "prettierd", "prettier" } },
-			sql = { "sqlfluff" },
-			lua = { "stylua" },
 			python = { "isort", "black" },
 			java = { "prettier-java" },
 			scss = { "prettier" },
@@ -68,7 +65,7 @@ return {
 			}),
 			-- Set the log level. Use `:ConformInfo` to see the location of the log file
 			log_level = vim.log.levels.ERROR,
-			
+
 			-- notify when a formatter errors
 			notify_on_error = true,
 		})
