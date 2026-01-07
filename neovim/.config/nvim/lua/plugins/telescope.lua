@@ -71,7 +71,7 @@ return {
 			-- Configuration
 			telescope.setup({
 				defaults = {
-					file_ignore_patterns = { "bin", ".gitignore", "node_modules", "PackageCache", ".git", "test", "/build" },
+					file_ignore_patterns = { "bin", ".gitignore", "node_modules", "PackageCache", ".git", "/build" },
 					path_display = {
 						shorten = {
 							len = 3,
