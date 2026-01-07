@@ -72,6 +72,18 @@ return {
 			telescope.setup({
 				defaults = {
 					file_ignore_patterns = { "bin", ".gitignore", "node_modules", "PackageCache", ".git", "/build" },
+					mappings = {
+						i = {
+							["<C-j>"] = actions.move_selection_next,
+							["<C-k>"] = actions.move_selection_previous,
+							["<C-n>"] = actions.cycle_history_next,
+							["<C-p>"] = actions.cycle_history_prev,
+						},
+						n = {
+							["<C-j>"] = actions.move_selection_next,
+							["<C-k>"] = actions.move_selection_previous,
+						},
+					},
 					path_display = {
 						shorten = {
 							len = 3,
