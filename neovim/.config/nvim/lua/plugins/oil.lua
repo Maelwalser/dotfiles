@@ -28,6 +28,7 @@ return {
         foldcolumn = "0",
         spell = false,
         list = false,
+        winbar = "%!v:lua.require('oil').get_current_dir()",
         conceallevel = 3,
         concealcursor = "nvic",
       },
