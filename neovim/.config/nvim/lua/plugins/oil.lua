@@ -5,7 +5,7 @@ return {
   config = function()
     require("oil").setup({
       keymaps = {
-        
+
         -- Your other keymaps
         ["<C-s>"] = "actions.select_vsplit",
         ["<C-v>"] = "actions.select_split",
@@ -28,7 +28,7 @@ return {
         foldcolumn = "0",
         spell = false,
         list = false,
-        winbar = "%!v:lua.require('oil').get_current_dir()",
+        winbar = "%=%{v:lua.require('oil').get_current_dir()}%=",
         conceallevel = 3,
         concealcursor = "nvic",
       },
@@ -36,6 +36,5 @@ return {
         show_hidden = true,
       },
     })
-
   end,
 }
