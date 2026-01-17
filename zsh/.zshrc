@@ -150,3 +150,6 @@ bindkey -r -M viins '^X~'
 export PATH="$HOME/.local/bin:$PATH"
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# opencode
+export PATH=/home/mael/.opencode/bin:$PATH
